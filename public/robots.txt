@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bialystok-korepetycje.pl/sitemap-index.xml

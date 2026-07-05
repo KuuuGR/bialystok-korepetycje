@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Korepetycje z fizyki i matematyki w Białymstoku';
+const description =
+  'Indywidualne korepetycje z fizyki i matematyki w Białymstoku. Przygotowanie do egzaminów, matury i poprawa wyników w szkole. Nauka oparta na zrozumieniu i praktyce.';
+---
+
+<Layout title={title} description={description} canonicalPath="/">
+  <header class="border-b border-slate-200">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
+      <a href="/" class="text-lg font-semibold tracking-tight text-slate-900">
+        Fizyka &amp; Matematyka
+      </a>
+      <nav aria-label="Główne menu">
+        <ul class="flex gap-6 text-sm font-medium text-slate-600">
+          <li><a href="#oferta" class="hover:text-slate-900">Oferta</a></li>
+          <li><a href="#kontakt" class="hover:text-slate-900">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="mx-auto max-w-5xl px-6 py-20 text-center">
+      <p class="mb-4 text-sm font-medium uppercase tracking-widest text-blue-600">
+        Białystok
+      </p>
+      <h1 class="mb-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+        Korepetycje z fizyki i matematyki
+      </h1>
+      <p class="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-slate-600">
+        Pomagam uczniom zrozumieć trudne zagadnienia, przygotować się do sprawdzianów,
+        matury i egzaminów ósmoklasisty. Indywidualne podejście i nacisk na praktykę.
+      </p>
+      <a
+        href="#kontakt"
+        class="inline-block rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700"
+      >
+        Umów lekcję próbną
+      </a>
+    </section>
+
+    <section id="oferta" class="border-t border-slate-200 bg-slate-50">
+      <div class="mx-auto max-w-5xl px-6 py-16">
+        <h2 class="mb-10 text-center text-2xl font-bold text-slate-900">Oferta</h2>
+        <ul class="grid gap-8 sm:grid-cols-2">
+          <li class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="mb-2 text-lg font-semibold text-slate-900">Fizyka</h3>
+            <p class="text-slate-600">
+              Mechanika, elektromagnetyzm, optyka, termodynamika — od szkoły podstawowej
+              po poziom rozszerzony matury.
+            </p>
+          </li>
+          <li class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="mb-2 text-lg font-semibold text-slate-900">Matematyka</h3>
+            <p class="text-slate-600">
+              Algebra, geometria, analiza — systematyczne tłumaczenie teorii i rozwiązywanie
+              zadań krok po kroku.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="kontakt" class="mx-auto max-w-5xl px-6 py-16 text-center">
+      <h2 class="mb-4 text-2xl font-bold text-slate-900">Kontakt</h2>
+      <p class="mb-6 text-slate-600">
+        Napisz lub zadzwoń, aby umówić pierwszą lekcję.
+      </p>
+      <a
+        href="mailto:kontakt@example.com"
+        class="text-lg font-medium text-blue-600 hover:text-blue-700"
+      >
+        kontakt@example.com
+      </a>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200">
+    <div class="mx-auto max-w-5xl px-6 py-8 text-center text-sm text-slate-500">
+      &copy; {new Date().getFullYear()} Korepetycje z fizyki i matematyki — Białystok
+    </div>
+  </footer>
+</Layout>
