@@ -2,19 +2,30 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import TutorCard from '../components/TutorCard.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
+import tutorPhoto from '../assets/tutor-placeholder.svg';
+
+const lastUpdated = new Intl.DateTimeFormat('pl-PL', {
+  day: '2-digit',
+  month: '2-digit',
+  year: 'numeric',
+}).format(new Date());
 
 const ofertaItems = [
   {
+    icon: '🎓',
     title: 'Matura',
     description:
       'Przygotowanie do matury z fizyki i matematyki na poziomie podstawowym i rozszerzonym — arkusze, strategie egzaminacyjne i powtórki kluczowych zagadnień.',
   },
   {
+    icon: '🍎',
     title: 'Biofizyka',
     description:
       'Wsparcie dla studentów kierunków medycznych i przyrodniczych — fizyka stosowana w biologii, zadania z analizy danych i podstaw modelowania.',
   },
   {
+    icon: '⚡',
     title: 'Elektrotechnika',
     description:
       'Pomoc na studiach technicznych — obwody prądu stałego i przemiennego, analiza sygnałów, podstawy elektromagnetyzmu i zadania inżynierskie.',
@@ -29,32 +40,38 @@ const recommendedTutors = [
 ---
 
 <Layout canonicalPath="/">
+  <p class="border-b border-slate-100 bg-slate-50 py-1.5 text-center text-xs text-gray-500">
+    Ostatnia aktualizacja: {lastUpdated}
+  </p>
+
   <Header />
 
   <main id="main-content">
     <section
-      class="mx-auto max-w-5xl px-4 py-16 text-center sm:px-6 sm:py-24"
+      class="border-b border-blue-100 bg-gradient-to-b from-blue-50 via-white to-white"
       aria-labelledby="hero-heading"
     >
-      <p class="mb-4 text-sm font-medium uppercase tracking-widest text-blue-700">
-        Białystok
-      </p>
-      <h1
-        id="hero-heading"
-        class="mb-6 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl"
-      >
-        Korepetycje w Białymstoku — Zrozumieć fizykę, nie tylko ją wykuć.
-      </h1>
-      <p class="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
-        Indywidualne lekcje z fizyki i matematyki. Uczę myślenia i samodzielnego rozwiązywania
-        zadań — od szkoły średniej po studia.
-      </p>
-      <a
-        href="#kontakt"
-        class="inline-block rounded-lg bg-blue-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2"
-      >
-        Umów lekcję próbną
-      </a>
+      <div class="mx-auto max-w-5xl px-4 py-16 text-center sm:px-6 sm:py-24">
+        <p class="mb-4 text-sm font-medium uppercase tracking-widest text-blue-700">
+          Białystok
+        </p>
+        <h1
+          id="hero-heading"
+          class="mb-6 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl"
+        >
+          Korepetycje w Białymstoku — Zrozumieć fizykę, nie tylko ją wykuć.
+        </h1>
+        <p class="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
+          Indywidualne lekcje z fizyki i matematyki. Uczę myślenia i samodzielnego rozwiązywania
+          zadań — od szkoły średniej po studia.
+        </p>
+        <a
+          href="#kontakt"
+          class="inline-block rounded-lg bg-blue-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2"
+        >
+          Umów lekcję próbną
+        </a>
+      </div>
     </section>
 
     <section
@@ -63,27 +80,45 @@ const recommendedTutors = [
       aria-labelledby="o-mnie-heading"
     >
       <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
-        <h2 id="o-mnie-heading" class="mb-8 text-2xl font-bold sm:text-3xl">
+        <h2 id="o-mnie-heading" class="mb-2 text-2xl font-bold sm:text-3xl">
           O mnie
         </h2>
-        <div class="max-w-3xl space-y-5 text-base leading-relaxed text-slate-600 sm:text-lg">
-          <p>
-            Od ponad <strong class="font-semibold text-slate-900">10 lat</strong> prowadzę
-            korepetycje z fizyki i matematyki. Przez ten czas współpracowałem z uczniami
-            szkół podstawowych, liceów i techników, a także ze studentami kierunków
-            technicznych i medycznych.
-          </p>
-          <p>
-            Mam doświadczenie w pracy ze szkołami — zarówno jako wykładowca, jak i
-            współpracownik przy organizacji zajęć dodatkowych. Znam program nauczania
-            i wiem, z jakimi trudnościami uczniowie spotykają się najczęściej na lekcjach
-            i egzaminach.
-          </p>
-          <p>
-            W moim podejściu stawiam na <strong class="font-semibold text-slate-900">zrozumienie, a nie wkuwanie</strong>.
-            Uczę, jak się uczyć — tłumaczę zagadnienia od podstaw, łączę teorię z praktyką
-            i buduję pewność na sprawdzianach oraz maturze.
-          </p>
+        <p class="mb-8 text-lg font-medium text-slate-700">
+          Fizyka to nie tylko wzory
+        </p>
+        <div class="grid items-start gap-8 md:grid-cols-[minmax(0,280px)_1fr] lg:grid-cols-[minmax(0,320px)_1fr] lg:gap-12">
+          <figure class="mx-auto w-full max-w-xs md:mx-0 md:max-w-none">
+            <OptimizedImage
+              src={tutorPhoto}
+              alt="Zdjęcie korepetytora — placeholder"
+              width={320}
+              height={400}
+              class="w-full rounded-lg border border-slate-200 bg-white shadow-sm"
+            />
+            <figcaption class="mt-2 text-center text-xs text-gray-500 md:text-left">
+              Zdjęcie wkrótce
+            </figcaption>
+          </figure>
+          <div class="space-y-5 text-base leading-relaxed text-slate-600 sm:text-lg">
+            <p>
+              Cześć! Nazywam się <strong class="font-semibold text-slate-900">[Twoje Imię]</strong> i od
+              10 lat pomagam uczniom oswoić fizykę i matematykę. Nie jestem typem korepetytora, który
+              bezmyślnie przerabia zadania z kartki na kartkę.
+            </p>
+            <p>
+              Wiem, jak to jest, gdy przedmiot wydaje się czarną magią — sam kiedyś przechodziłem przez
+              te same trudności. Dlatego w mojej pracy stawiam na
+              <strong class="font-semibold text-slate-900">zrozumienie mechanizmów</strong>, a nie
+              pamięciowe opanowanie wzorów. Czy to przygotowanie do matury, biofizyka czy elektrotechnika
+              — moją misją jest pokazanie Ci, że te przedmioty mają sens i logikę, które każdy jest w
+              stanie pojąć.
+            </p>
+            <p class="border-l-2 border-blue-200 pl-4 text-slate-600 italic">
+              <span class="font-medium not-italic text-slate-700">Prywatnie:</span> pasjonat wiedzy,
+              który wierzy, że każdy uczeń ma w sobie potencjał, potrzebuje tylko odpowiedniego „klucza”
+              do rozwiązania problemu.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -102,7 +137,10 @@ const recommendedTutors = [
           {
             ofertaItems.map((item) => (
               <li class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-                <h3 class="mb-3 text-lg font-semibold">{item.title}</h3>
+                <h3 class="mb-3 flex items-center gap-2 text-lg font-semibold">
+                  <span class="text-xl" aria-hidden="true">{item.icon}</span>
+                  {item.title}
+                </h3>
                 <p class="text-sm leading-relaxed text-slate-600 sm:text-base">
                   {item.description}
                 </p>

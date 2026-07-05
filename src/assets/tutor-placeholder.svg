@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" fill="none" role="img" aria-label="Zdjcie korepetytora  placeholder">
+  <rect width="400" height="500" fill="#f1f5f9"/>
+  <rect x="24" y="24" width="352" height="452" rx="12" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2"/>
+  <circle cx="200" cy="180" r="64" fill="#94a3b8"/>
+  <path d="M96 420c24-72 88-108 104-108s80 36 104 108" fill="#94a3b8"/>
+  <text x="200" y="470" text-anchor="middle" fill="#64748b" font-family="Georgia, serif" font-size="14">Zdjcie wkrótce</text>
+</svg>
