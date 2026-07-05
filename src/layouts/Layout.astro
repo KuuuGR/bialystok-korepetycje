@@ -1,9 +1,12 @@
 ---
 import '../styles/global.css';
 
+const DEFAULT_DESCRIPTION =
+  'Szukasz korepetycji z fizyki i matematyki w Białymstoku? Wykładowca z 10-letnim doświadczeniem. Skutecznie przygotuję Cię do matury i nadrobię zaległości. Sprawdź ofertę!';
+
 interface Props {
   title: string;
-  description: string;
+  description?: string;
   /** Relative path, e.g. "/" or "/kontakt" */
   canonicalPath?: string;
   noindex?: boolean;
@@ -11,7 +14,7 @@ interface Props {
 
 const {
   title,
-  description,
+  description = DEFAULT_DESCRIPTION,
   canonicalPath = Astro.url.pathname,
   noindex = false,
 } = Astro.props;
@@ -29,7 +32,11 @@ const fullTitle = title.includes('Białystok') ? title : `${title} | Korepetycje
 
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {noindex ? (
+      <meta name="robots" content="noindex, nofollow" />
+    ) : (
+      <meta name="robots" content="index, follow" />
+    )}
 
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

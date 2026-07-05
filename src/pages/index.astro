@@ -3,8 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 
 const title = 'Korepetycje z fizyki i matematyki w Białymstoku';
-const description =
-  'Indywidualne korepetycje z fizyki i matematyki w Białymstoku. Przygotowanie do egzaminów, matury i poprawa wyników w szkole. Nauka oparta na zrozumieniu i praktyce.';
 
 const ofertaItems = [
   {
@@ -30,16 +28,21 @@ const ofertaItems = [
 ];
 ---
 
-<Layout title={title} description={description} canonicalPath="/">
+<Layout title={title} canonicalPath="/">
   <Header />
 
-  <main>
-    <!-- Hero -->
-    <section class="mx-auto max-w-5xl px-4 py-16 text-center sm:px-6 sm:py-24">
+  <main id="main-content">
+    <section
+      class="mx-auto max-w-5xl px-4 py-16 text-center sm:px-6 sm:py-24"
+      aria-labelledby="hero-heading"
+    >
       <p class="mb-4 text-sm font-medium uppercase tracking-widest text-blue-600">
         Białystok
       </p>
-      <h1 class="mb-6 text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
+      <h1
+        id="hero-heading"
+        class="mb-6 text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl md:text-5xl"
+      >
         Korepetycje z Fizyki i Matematyki w Białymstoku
       </h1>
       <p class="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
@@ -54,10 +57,15 @@ const ofertaItems = [
       </a>
     </section>
 
-    <!-- O mnie -->
-    <section id="o-mnie" class="border-t border-slate-200 bg-slate-50">
+    <section
+      id="o-mnie"
+      class="border-t border-slate-200 bg-slate-50"
+      aria-labelledby="o-mnie-heading"
+    >
       <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
-        <h2 class="mb-8 text-2xl font-bold text-slate-900 sm:text-3xl">O mnie</h2>
+        <h2 id="o-mnie-heading" class="mb-8 text-2xl font-bold text-slate-900 sm:text-3xl">
+          O mnie
+        </h2>
         <div class="max-w-3xl space-y-5 text-base leading-relaxed text-slate-600 sm:text-lg">
           <p>
             Od ponad <strong class="font-semibold text-slate-900">10 lat</strong> prowadzę
@@ -81,15 +89,16 @@ const ofertaItems = [
       </div>
     </section>
 
-    <!-- Oferta -->
-    <section id="oferta" class="border-t border-slate-200">
+    <section id="oferta" class="border-t border-slate-200" aria-labelledby="oferta-heading">
       <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
-        <div class="mb-10 text-center">
-          <h2 class="text-2xl font-bold text-slate-900 sm:text-3xl">Oferta</h2>
+        <header class="mb-10 text-center">
+          <h2 id="oferta-heading" class="text-2xl font-bold text-slate-900 sm:text-3xl">
+            Oferta
+          </h2>
           <p class="mt-3 text-slate-600">
             Wybierz obszar, w którym potrzebujesz wsparcia.
           </p>
-        </div>
+        </header>
         <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8">
           {
             ofertaItems.map((item) => (
@@ -105,36 +114,43 @@ const ofertaItems = [
       </div>
     </section>
 
-    <!-- Kontakt -->
-    <section id="kontakt" class="border-t border-slate-200 bg-slate-50">
+    <section
+      id="kontakt"
+      class="border-t border-slate-200 bg-slate-50"
+      aria-labelledby="kontakt-heading"
+    >
       <div class="mx-auto max-w-5xl px-4 py-16 text-center sm:px-6 sm:py-20">
-        <h2 class="mb-4 text-2xl font-bold text-slate-900 sm:text-3xl">Kontakt</h2>
+        <h2 id="kontakt-heading" class="mb-4 text-2xl font-bold text-slate-900 sm:text-3xl">
+          Kontakt
+        </h2>
         <p class="mx-auto mb-10 max-w-xl text-base text-slate-600 sm:text-lg">
           Zadzwoń lub napisz, aby umówić pierwszą lekcję lub zadać pytania o ofertę.
         </p>
         <div class="mx-auto flex max-w-md flex-col gap-6">
-          <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-            <p class="mb-1 text-sm font-medium uppercase tracking-wide text-slate-500">
+          <article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="mb-1 text-sm font-medium uppercase tracking-wide text-slate-500">
               Telefon
-            </p>
+            </h3>
             <a
               href="tel:+48123456789"
               class="text-xl font-semibold text-blue-600 transition hover:text-blue-700"
             >
               +48 123 456 789
             </a>
-          </div>
-          <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-            <p class="mb-1 text-sm font-medium uppercase tracking-wide text-slate-500">
+          </article>
+          <article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="mb-1 text-sm font-medium uppercase tracking-wide text-slate-500">
               Lokalizacja
-            </p>
-            <p class="text-base font-medium text-slate-900">
-              Białystok, woj. podlaskie
-            </p>
-            <p class="mt-1 text-sm text-slate-600">
-              Zajęcia stacjonarne w centrum miasta lub online
-            </p>
-          </div>
+            </h3>
+            <address class="not-italic">
+              <p class="text-base font-medium text-slate-900">
+                Białystok, woj. podlaskie
+              </p>
+              <p class="mt-1 text-sm text-slate-600">
+                Zajęcia stacjonarne w centrum miasta lub online
+              </p>
+            </address>
+          </article>
         </div>
       </div>
     </section>
