@@ -217,6 +217,44 @@ const recommendedTutors = [
     </section>
 
     <section
+      id="inwestycja"
+      class="fade-in border-t border-slate-200"
+      aria-labelledby="inwestycja-heading"
+    >
+      <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
+        <h2 id="inwestycja-heading" class="mb-8 text-center text-2xl font-bold sm:text-3xl">
+          <span aria-hidden="true">💰</span> Inwestycja w naukę
+        </h2>
+        <div
+          class="mx-auto max-w-2xl rounded-lg border border-gray-200 bg-gray-50 p-6 sm:p-8"
+        >
+          <ul class="space-y-5 text-base text-slate-700">
+            <li>
+              <p class="font-semibold text-slate-900">
+                Zajęcia standardowe (Matura, studia, wyrównywanie wiedzy):
+              </p>
+              <p class="mt-1">od 110 zł / 60 min</p>
+            </li>
+            <li>
+              <p class="font-semibold text-slate-900">
+                Sesja ratunkowa (SOS - last minute):
+              </p>
+              <p class="mt-1">od 160 zł / 60 min</p>
+            </li>
+          </ul>
+          <p class="mt-5 text-sm italic text-slate-600">
+            Zajęcia stacjonarne i online wyceniane są tak samo.
+          </p>
+          <p class="mt-6 border-t border-gray-200 pt-5 text-xs leading-relaxed text-slate-500">
+            Ostateczna kwota zależy od zakresu materiału i stopnia skomplikowania zagadnień.
+            W przypadku dojazdu do ucznia, do podstawowej stawki doliczam koszt czasu i transportu
+            (ustalane indywidualnie).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
       id="kontakt"
       class="fade-in border-t border-slate-200"
       aria-labelledby="kontakt-heading"
@@ -228,7 +266,7 @@ const recommendedTutors = [
         <p class="mx-auto mb-10 max-w-xl text-base text-slate-600 sm:text-lg">
           Zadzwoń lub napisz, aby umówić pierwszą lekcję lub zadać pytania o ofertę.
         </p>
-        <div class="mx-auto flex max-w-md flex-col gap-6">
+        <div class="mx-auto flex max-w-md flex-col gap-6 text-left">
           <article class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
             <h3 class="mb-1 text-sm font-medium uppercase tracking-wide text-slate-500">
               Telefon
@@ -241,17 +279,23 @@ const recommendedTutors = [
             </a>
           </article>
           <article class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-            <h3 class="mb-1 text-sm font-medium uppercase tracking-wide text-slate-500">
+            <h3 class="mb-3 text-sm font-medium uppercase tracking-wide text-slate-500">
               Lokalizacja
             </h3>
-            <address class="not-italic">
-              <p class="text-base font-medium text-slate-900">
-                Białystok, woj. podlaskie
-              </p>
-              <p class="mt-1 text-sm text-slate-600">
-                Zajęcia stacjonarne w centrum miasta lub online
-              </p>
-            </address>
+            <ul class="space-y-3 text-base text-slate-700">
+              <li class="flex items-start gap-3">
+                <span class="shrink-0 text-lg leading-6" aria-hidden="true">📍</span>
+                <span>Białystok, centrum</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="shrink-0 text-lg leading-6" aria-hidden="true">🌐</span>
+                <span>Online (pełna skuteczność)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="shrink-0 text-lg leading-6" aria-hidden="true">🚗</span>
+                <span>Dojazd do ucznia (możliwy po wcześniejszym uzgodnieniu)</span>
+              </li>
+            </ul>
           </article>
         </div>
       </div>
