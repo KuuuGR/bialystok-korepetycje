@@ -17,3 +17,19 @@
     @apply font-serif tracking-tight text-slate-900;
   }
 }
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    opacity: 1;
+    transition: none;
+  }
+}
