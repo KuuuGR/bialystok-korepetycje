@@ -6,12 +6,25 @@ interface Props {
 }
 
 const { name, subject, availability } = Astro.props;
+
+const score = Number.parseInt(availability.split('/')[0] ?? '0', 10);
+
+const availabilityStatus =
+  score >= 4
+    ? { dotClass: 'bg-green-500', label: 'Dostępne terminy' }
+    : score === 3
+      ? { dotClass: 'bg-orange-500', label: 'Ostatnie miejsca' }
+      : { dotClass: 'bg-red-500', label: 'Zajęte - zapytaj o wolny termin' };
 ---
 
 <article class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
   <h3 class="mb-1 text-lg font-semibold">{name}</h3>
   <p class="mb-3 text-sm text-slate-600">{subject}</p>
-  <p class="text-sm font-medium text-slate-700">
-    <span class="text-slate-500">Dostępność:</span> {availability}
+  <p class="flex items-center gap-2 text-sm font-medium text-slate-700">
+    <span
+      class:list={['h-2 w-2 shrink-0 rounded-full', availabilityStatus.dotClass]}
+      aria-hidden="true"
+    ></span>
+    <span>{availabilityStatus.label}</span>
   </p>
 </article>
