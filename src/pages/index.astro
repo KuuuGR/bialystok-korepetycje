@@ -36,7 +36,12 @@ const ofertaItems = [
 ];
 
 const recommendedTutors = [
-  { name: 'Anna Kowalska', subject: 'Matematyka — szkoła średnia', availability: '4/5' },
+  {
+    name: 'Mariusz Stankiewicz',
+    subject: 'Matematyka, Chemia, Fizyka',
+    phone: '+48 663 193 226',
+    availability: '4/5',
+  },
   { name: 'Piotr Nowak', subject: 'Fizyka — matura rozszerzona', availability: '5/5' },
   { name: 'Maria Wiśniewska', subject: 'Biofizyka — studia medyczne', availability: '3/5' },
 ];
@@ -208,6 +213,7 @@ const recommendedTutors = [
                   name={tutor.name}
                   subject={tutor.subject}
                   availability={tutor.availability}
+                  phone={tutor.phone}
                 />
               </li>
             ))
