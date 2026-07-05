@@ -8,6 +8,12 @@
   }
 
   body {
-    @apply bg-white text-slate-900 antialiased;
+    @apply bg-white font-sans text-slate-800 antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-serif tracking-tight text-slate-900;
   }
 }

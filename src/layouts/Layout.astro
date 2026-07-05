@@ -1,11 +1,12 @@
 ---
 import '../styles/global.css';
 
+const DEFAULT_TITLE = 'Korepetycje z Fizyki i Matematyki w Białymstoku';
 const DEFAULT_DESCRIPTION =
-  'Szukasz korepetycji z fizyki i matematyki w Białymstoku? Wykładowca z 10-letnim doświadczeniem. Skutecznie przygotuję Cię do matury i nadrobię zaległości. Sprawdź ofertę!';
+  'Doświadczony wykładowca z 10-letnim stażem. Uczę jak się uczyć, nie tylko jak rozwiązywać zadania. Matura, biofizyka, elektrotechnika.';
 
 interface Props {
-  title: string;
+  title?: string;
   description?: string;
   /** Relative path, e.g. "/" or "/kontakt" */
   canonicalPath?: string;
@@ -13,14 +14,13 @@ interface Props {
 }
 
 const {
-  title,
+  title = DEFAULT_TITLE,
   description = DEFAULT_DESCRIPTION,
   canonicalPath = Astro.url.pathname,
   noindex = false,
 } = Astro.props;
 
 const canonicalURL = new URL(canonicalPath, Astro.site);
-const fullTitle = title.includes('Białystok') ? title : `${title} | Korepetycje Białystok`;
 ---
 
 <!doctype html>
@@ -30,7 +30,7 @@ const fullTitle = title.includes('Białystok') ? title : `${title} | Korepetycje
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
 
-    <title>{fullTitle}</title>
+    <title>{title}</title>
     <meta name="description" content={description} />
     {noindex ? (
       <meta name="robots" content="noindex, nofollow" />
@@ -44,15 +44,15 @@ const fullTitle = title.includes('Białystok') ? title : `${title} | Korepetycje
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pl_PL" />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={fullTitle} />
+    <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:site_name" content="Korepetycje z fizyki i matematyki — Białystok" />
+    <meta property="og:site_name" content="Korepetycje z Fizyki i Matematyki w Białymstoku" />
 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
   </head>
-  <body>
+  <body class="min-h-screen">
     <slot />
   </body>
 </html>

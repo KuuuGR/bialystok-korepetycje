@@ -12,6 +12,7 @@ export default {
           'Roboto',
           'sans-serif',
         ],
+        serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
       },
     },
   },
